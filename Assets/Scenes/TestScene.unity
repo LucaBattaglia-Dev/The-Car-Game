@@ -190,8 +190,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0149968, y: 1.1084552, z: 4.5886793}
-  m_Center: {x: -1.4519119, y: 1.4386106, z: -1.1235894}
+  m_Size: {x: 1.9592558, y: 1.1084552, z: 4.5886793}
+  m_Center: {x: -1.4797823, y: 1.4386106, z: -1.1235894}
 --- !u!1 &89154581
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 459675699}
   m_Layer: 0
-  m_Name: RR
+  m_Name: FL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 459675698}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 1.6}
+  m_LocalPosition: {x: -0.95, y: 0, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -686,7 +686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1093776851}
   m_Layer: 0
-  m_Name: RL
+  m_Name: FR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,7 +701,7 @@ Transform:
   m_GameObject: {fileID: 1093776850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 1.6}
+  m_LocalPosition: {x: 0.825, y: 0, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -759,17 +759,65 @@ MonoBehaviour:
   carRB: {fileID: 1191612763}
   rayPoints:
   - {fileID: 1937699006}
-  - {fileID: 1093776851}
   - {fileID: 1201939766}
+  - {fileID: 1093776851}
   - {fileID: 459675699}
   drivable:
     serializedVersion: 2
     m_Bits: 64
-  springStiffness: 30000
+  accelerationPoint: {fileID: 1845370815}
+  springStiffness: 35000
   damperStiffness: 4000
   restLength: 0.5
   springTravel: 0.25
-  wheelRadius: 0.3
+  wheelRadius: 0.25
+  acceleration: 25
+  maxSpeed: 100
+  deceleration: 10
+  steerStrength: 35
+  turningCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.17830622
+      value: 0.55384094
+      inSlope: 0.91278464
+      outSlope: 0.91278464
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.46460655
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.60259616
+      value: 1.0906667
+      inSlope: -0.000033579046
+      outSlope: -0.000033579046
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.41617528
+      outWeight: 0.40215814
+    - serializedVersion: 3
+      time: 1.0664953
+      value: 1.0091014
+      inSlope: 0.25594997
+      outSlope: 0.25594997
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3248305
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dragCoefficient: 1
 --- !u!54 &1191612763
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -778,9 +826,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191612760}
   serializedVersion: 5
-  m_Mass: 1500
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_Mass: 1000
+  m_LinearDamping: 0.8
+  m_AngularDamping: 6
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -790,7 +838,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -807,7 +855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1201939766}
   m_Layer: 0
-  m_Name: FR
+  m_Name: BL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -822,7 +870,7 @@ Transform:
   m_GameObject: {fileID: 1201939765}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: -1.6}
+  m_LocalPosition: {x: -0.95, y: 0, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1053,7 +1101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937699006}
   m_Layer: 0
-  m_Name: FL
+  m_Name: BR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1068,7 +1116,7 @@ Transform:
   m_GameObject: {fileID: 1937699005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: -1.6}
+  m_LocalPosition: {x: 0.825, y: 0, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
