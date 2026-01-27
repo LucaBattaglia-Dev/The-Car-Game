@@ -770,7 +770,7 @@ MonoBehaviour:
   damperStiffness: 4000
   restLength: 0.5
   springTravel: 0.25
-  wheelRadius: 0.3
+  wheelRadius: 0.25
   acceleration: 25
   maxSpeed: 100
   deceleration: 10
@@ -788,8 +788,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.19496945
-      value: 0.51506835
+      time: 0.17830622
+      value: 0.55384094
       inSlope: 0.91278464
       outSlope: 0.91278464
       tangentMode: 0
@@ -797,8 +797,8 @@ MonoBehaviour:
       inWeight: 0.46460655
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.61925876
-      value: 1.0179566
+      time: 0.60259616
+      value: 1.0906667
       inSlope: -0.000033579046
       outSlope: -0.000033579046
       tangentMode: 0
@@ -806,8 +806,8 @@ MonoBehaviour:
       inWeight: 0.41617528
       outWeight: 0.40215814
     - serializedVersion: 3
-      time: 0.99983114
-      value: 0.96547496
+      time: 1.0664953
+      value: 1.0091014
       inSlope: 0.25594997
       outSlope: 0.25594997
       tangentMode: 0
@@ -817,6 +817,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  dragCoefficient: 1
 --- !u!54 &1191612763
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -827,7 +828,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 1000
   m_LinearDamping: 1
-  m_AngularDamping: 7.5
+  m_AngularDamping: 6
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -837,7 +838,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 0
+  m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0

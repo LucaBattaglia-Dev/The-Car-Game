@@ -32,6 +32,7 @@ public class CarController : MonoBehaviour
     [SerializeField] private float deceleration = 10f;
     [SerializeField] private float steerStrength = 15f;
     [SerializeField] private AnimationCurve turningCurve;
+    [SerializeField] private float dragCoefficient = 1f;
 
     private Vector3 currentCarLocalVelocity = Vector3.zero;
     private float carVelocityRatio = 0;
@@ -69,6 +70,7 @@ public class CarController : MonoBehaviour
             Acceleration();
             Decelration(); // Note: Spelling matches image provided
             Turn();
+            SidewaysDrag();
         }
     }
 
@@ -86,8 +88,18 @@ public class CarController : MonoBehaviour
 
     private void Turn()
     {
-        
+
         carRB.AddTorque(steerStrength * steerInput * turningCurve.Evaluate(carVelocityRatio) * Mathf.Sign(carVelocityRatio) * transform.up, ForceMode.Acceleration);
+    }
+    
+    private void SidewaysDrag()
+    {
+        float currentSidewaysSpeed = currentCarLocalVelocity.x;
+        float dragMagnitude = -currentSidewaysSpeed * dragCoefficient;
+        Vector3 dragForce = transform.right * dragMagnitude;
+
+        // Applies counter-force to reduce sideways sliding
+        carRB.AddForceAtPosition(dragForce, carRB.worldCenterOfMass, ForceMode.Acceleration);
     }
 
 
