@@ -68,6 +68,7 @@ public class CarController : MonoBehaviour
         {
             Acceleration();
             Decelration(); // Note: Spelling matches image provided
+            Turn();
         }
     }
 

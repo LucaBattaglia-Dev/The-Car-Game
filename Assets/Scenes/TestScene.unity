@@ -759,14 +759,14 @@ MonoBehaviour:
   carRB: {fileID: 1191612763}
   rayPoints:
   - {fileID: 1937699006}
-  - {fileID: 1093776851}
   - {fileID: 1201939766}
+  - {fileID: 1093776851}
   - {fileID: 459675699}
   drivable:
     serializedVersion: 2
     m_Bits: 64
   accelerationPoint: {fileID: 1845370815}
-  springStiffness: 30000
+  springStiffness: 35000
   damperStiffness: 4000
   restLength: 0.5
   springTravel: 0.25
@@ -774,6 +774,49 @@ MonoBehaviour:
   acceleration: 25
   maxSpeed: 100
   deceleration: 10
+  steerStrength: 35
+  turningCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.19496945
+      value: 0.51506835
+      inSlope: 0.91278464
+      outSlope: 0.91278464
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.46460655
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.61925876
+      value: 1.0179566
+      inSlope: -0.000033579046
+      outSlope: -0.000033579046
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.41617528
+      outWeight: 0.40215814
+    - serializedVersion: 3
+      time: 0.99983114
+      value: 0.96547496
+      inSlope: 0.25594997
+      outSlope: 0.25594997
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3248305
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!54 &1191612763
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -784,7 +827,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 1000
   m_LinearDamping: 1
-  m_AngularDamping: 1
+  m_AngularDamping: 7.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -794,7 +837,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
